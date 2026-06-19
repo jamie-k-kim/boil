@@ -1,0 +1,56 @@
+[package]
+name = "boil-engine"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+repository.workspace = true
+
+[dependencies]
+boil-core = { path = "../core" }
+
+anyhow = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+globset = { workspace = true }
+bincode = { workspace = true }
+petgraph = { workspace = true }
+chrono = { workspace = true }
+walkdir = { workspace = true }
+tokenizers = { workspace = true }
+tempfile = { workspace = true }
+toml = { workspace = true }
+console = { workspace = true }
+indicatif = { workspace = true }
+dirs = { workspace = true }
+fastembed = { workspace = true }
+ureq = { workspace = true }
+extism = { workspace = true }
+leiden-rs = { workspace = true }
+git2 = { workspace = true }
+regex = { workspace = true }
+rayon = { workspace = true }
+ort = { workspace = true }
+tree-sitter = { workspace = true }
+
+tree-sitter-rust = "0.20.3"
+tree-sitter-c = "0.20.0"
+tree-sitter-javascript = "0.20.0"
+tree-sitter-python = "0.20.0"
+tree-sitter-typescript = "0.20.5"
+tree-sitter-cpp = "0.20.0"
+tree-sitter-java = "0.20.0"
+tree-sitter-go = "0.20.0"
+tree-sitter-c-sharp = "0.20.0"
+tree-sitter-ruby = "0.20.0"
+tree-sitter-kotlin = "=0.2.8"
+tree-sitter-swift = "=0.3.0"
+
+tabled = "0.21.0"
+tracing = "0.1.44"
+tracing-subscriber = "0.3.23"
+
+[features]
+default = ["dynamic", "system"]
+dynamic = ["ort/load-dynamic"]
+system = []
+static = ["git2/vendored-openssl", "ort/download-binaries"]

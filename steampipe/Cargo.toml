@@ -1,0 +1,42 @@
+[package]
+name = "steampipe"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+repository = "https://github.com/jamie-k-kim/boil"
+
+[[bin]]
+name = "boil"
+path = "src/main.rs"
+
+[[test]]
+name = "comprehensive_test"
+path = "test/comprehensive_test.rs"
+
+[dependencies]
+boil-core = { path = "../core" }
+boil-engine = { path = "../engine" }
+
+anyhow = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+globset = { workspace = true }
+bincode = { workspace = true }
+petgraph = { workspace = true }
+chrono = { workspace = true }
+walkdir = { workspace = true }
+tokenizers = { workspace = true }
+tempfile = { workspace = true }
+clap = { workspace = true }
+toml = { workspace = true }
+console = { workspace = true }
+indicatif = { workspace = true }
+dirs = { workspace = true }
+tree-sitter = { workspace = true }
+toml_edit = { workspace = true }
+
+[features]
+default = ["dynamic", "system"]
+dynamic = ["boil-engine/dynamic"]
+system = ["boil-engine/system"]
+static = ["boil-engine/static"]

@@ -7,7 +7,5 @@
 
 pub mod canon;
 pub mod engine;
-pub mod language;
-pub mod utils;
 
 pub use engine::{Engine, EngineConfig};

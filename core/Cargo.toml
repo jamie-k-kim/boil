@@ -1,0 +1,17 @@
+[package]
+name = "boil-core"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+repository.workspace = true
+
+[dependencies]
+serde = { workspace = true }
+serde_json = { workspace = true }
+anyhow = { workspace = true }
+globset = { workspace = true }
+petgraph = { workspace = true }
+bincode = { workspace = true }
+chrono = { workspace = true }
+tokenizers = { workspace = true }
+walkdir = { workspace = true }
